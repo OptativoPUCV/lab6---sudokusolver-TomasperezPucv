@@ -62,6 +62,7 @@ void buscarenmatriz(Node *nodo, int*j, int *k){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+    if(n== NULL) return NULL;
     for(int i=1 ; i<=9 ; i++){
       Node *aux = createNode();
       int j=0,k=0;
