@@ -64,9 +64,10 @@ List* get_adj_nodes(Node* n){
     List* list=createList();
     for(int i=0 ; i<=9 ; i++){
       Node *aux = createNode();
-      aux = copy(n);
+      
       int j=0,k=0;
-      buscarenmatriz(aux,&j,&k);
+      buscarenmatriz(n,&j,&k);
+      aux = copy(n);
       aux->sudo[j][k] =i;
       pushBack(list, aux);
     }
