@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "list.h"
 
 
@@ -47,17 +48,18 @@ int is_valid(Node* n){
 
     return 1;
 }
-void buscarenmatriz(Node *nodo, int*j, int *k){
+bool buscarenmatriz(Node *nodo, int*j, int *k){
   for(int n=0; n<9; n++){
     for(int m=0; m<9; m++){
       if(nodo->sudo[n][m] == 0){
         *j = n;
         *k = m;
-        return;
+        return true;
       }
       
     }
   }
+  return false;
 }
 
 List* get_adj_nodes(Node* n){
@@ -66,7 +68,8 @@ List* get_adj_nodes(Node* n){
     for(int i=1 ; i<=9 ; i++){
       Node *aux = createNode();
       int j=0,k=0;
-      buscarenmatriz(n,&j,&k);
+      bool haycero = buscarenmatriz(n,&j,&k);
+      if(haycero == false) break;
       aux = copy(n);
       aux->sudo[j][k] =i;
       pushBack(list, aux);
