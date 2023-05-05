@@ -68,8 +68,8 @@ List* get_adj_nodes(Node* n){
     for(int i=1 ; i<=9 ; i++){
       Node *aux = createNode();
       int j=0,k=0;
-      bool haycero = buscarenmatriz(n,&j,&k);
-      if(haycero == false) break;
+      bool hayceros = buscarenmatriz(n,&j,&k);
+      if(hayceros == false) break;
       aux = copy(n);
       aux->sudo[j][k] =i;
       pushBack(list, aux);
