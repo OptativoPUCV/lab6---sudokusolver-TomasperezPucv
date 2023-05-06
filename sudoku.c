@@ -47,11 +47,11 @@ void print_node(Node* n){
 bool repite(Node *n, int num, int fila, int colum){
   //comprobacion por fila
   for(int i=0; i<9; i++){
-    if((n->sudo[fila][i]==num)&&(i!=colum)) return true;
+    if(n->sudo[fila][i]==num && i!=colum) return true;
   }
   //comprobacion por columna
   for(int i=0; i<9; i++){
-    if((n->sudo[i][colum]==num)&&(i!=fila)) return true;
+    if(n->sudo[i][colum]==num && i!=fila) return true;
   }
   
   return false;
