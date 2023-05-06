@@ -64,7 +64,7 @@ int is_valid(Node* n){
       if(repite(n, num,j,k)== 1) return 0;
     }
   }
-    return 0;
+    return 1;
 }
 bool buscarenmatriz(Node *nodo, int*j, int *k){
   for(int n=0; n<9; n++){
