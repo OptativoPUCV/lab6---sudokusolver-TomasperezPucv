@@ -51,7 +51,7 @@ void print_node(Node* n){
 
 //if(arreglo[num]>1) return true;
 bool r_fila(Node *n, int fila){
-  /*int arreglo[10]= {0};
+  int arreglo[10]= {0};
   for(int i=0; i<9; i++){
     
     if(arreglo[n->sudo[fila][i]]==0){
@@ -59,7 +59,7 @@ bool r_fila(Node *n, int fila){
     }
     else return true;
   }
-  */
+  
   /*for(int i=0; i<9; i++){
     if(arreglo[i]>1) return true;
   }*/
