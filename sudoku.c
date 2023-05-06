@@ -46,7 +46,7 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
 
-    return 1;
+    return 0;
 }
 bool buscarenmatriz(Node *nodo, int*j, int *k){
   for(int n=0; n<9; n++){
@@ -55,8 +55,7 @@ bool buscarenmatriz(Node *nodo, int*j, int *k){
         *j = n;
         *k = m;
         return true;
-      }
-      
+      } 
     }
   }
   return false;
