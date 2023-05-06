@@ -55,7 +55,15 @@ bool repite(Node *n, int num, int fila, int colum){
   }
 
   //sub matriz de 3*3
-  
+   int k,p; 
+  k= colum/3 + (fila/3) * 3;
+    for(p=0;p<9;p++){
+        int i=3*(k/3) + (p/3) ;
+        int j=3*(k%3) + (p%3) ;
+        //printf("%d ",nodo->sudo[i][j]);
+        //if(p%3 == 2) printf("\n");
+      if((n->sudo[i][j] == num)&&(i!=fila)&&(j!=colum)) return true;
+    }
   return false;
 }
 
