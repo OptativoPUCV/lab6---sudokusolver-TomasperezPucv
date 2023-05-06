@@ -45,7 +45,14 @@ void print_node(Node* n){
 }
 
 bool repite(Node *n, int num, int fila, int colum){
-  
+  //fila
+  for(int i=0; i<9;i++){
+    if((n->sudo[fila][i]==num)&&(i!=colum)) return true;
+  }
+  //clomuna
+  for(int i=0; i<9;i++){
+    if((n->sudo[i][colum]==num)&&(i!=fila)) return true;
+  }
   return false;
 }
 
