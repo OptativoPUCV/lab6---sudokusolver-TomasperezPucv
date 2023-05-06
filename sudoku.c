@@ -54,10 +54,10 @@ bool r_fila(Node *n, int fila){
   int arreglo[10]= {0};
   for(int i=0; i<9; i++){
     
-    if(arreglo[n->sudo[fila][i]]==0){
-      arreglo[n->sudo[fila][i]] =1;
+    if(arreglo[n->sudo[fila][i]]==1){
+      return true;
     }
-    else return true;
+    else arreglo[n->sudo[fila][i]] =1;
   }
   
   /*for(int i=0; i<9; i++){
