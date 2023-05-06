@@ -53,6 +53,9 @@ bool repite(Node *n, int num, int fila, int colum){
   for(int i=0; i<9;i++){
     if((n->sudo[i][colum]==num)&&(i!=fila)) return true;
   }
+
+  //sub matriz de 3*3
+  
   return false;
 }
 
@@ -92,7 +95,11 @@ List* get_adj_nodes(Node* n){
       if(hayceros == false) break;
       aux = copy(n);
       aux->sudo[j][k] =i;
-      pushBack(list, aux);
+      if(is_valid(aux))
+      {
+        pushBack(list, aux);
+      }
+      
     }
   
     return list;
