@@ -75,7 +75,6 @@ int is_valid(Node* n){
       if(num != 0){
         if(repite(n, num,j,k)== true) return 0;
       }
-      
     }
   }
   return 1;
@@ -124,6 +123,19 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  Stack *S = createStack();
+  push(S, initial);
+  while(get_size(S)!=0){
+    Node *n = top(S);
+    pop(S);
+    if(is_final(n)) return  n;
+    List *adj = get_adj_nodes(n);
+    Node *aux = first(adj);
+    while(aux != NULL){
+      push(S, aux);
+      aux = next(adj);
+    }
+  }
   return NULL;
 }
 
