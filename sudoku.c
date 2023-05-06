@@ -44,14 +44,25 @@ void print_node(Node* n){
     printf("\n");
 }
 
+
+
 bool repite(Node *n, int num, int fila, int colum){
+  int arreglo[10]= {0};
+  
   //comprobacion por fila
   for(int i=0; i<9; i++){
-    if(n->sudo[fila][i]==num && i!=colum) return true;
+    //if(n->sudo[fila][i]==num && i!=colum) return true;
+    /*if(n->sudo[fila][i]==num){
+      arreglo[num]+=1;
+      if(arreglo[num]>1) return true;
+    }*/
+    arreglo[n->sudo[fila][i]]+=1;
+    
   }
   //comprobacion por columna
   for(int i=0; i<9; i++){
     if(n->sudo[i][colum]==num && i!=fila) return true;
+    
   }
   
   return false;
@@ -64,7 +75,7 @@ int is_valid(Node* n){
       if(repite(n, num,j,k)== true) return 0;
     }
   }
-    return 1;
+  return 1;
 }
 bool buscarenmatriz(Node *nodo, int*j, int *k){
   for(int n=0; n<9; n++){
