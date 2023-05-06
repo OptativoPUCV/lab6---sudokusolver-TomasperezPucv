@@ -110,3 +110,13 @@ Sat 06 May 2023 07:25:41 PM UTC:
  tests:  3|3
 total_score: 25/70
 fb6bdee
+Sat 06 May 2023 07:29:43 PM UTC: 
+ sudoku.c | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘r_fila’:
+sudoku.c:61:3: error: expected ‘;’ before ‘}’ token
+   61 |   }
+      |   ^
+Compilation failed
+4d4ac1c

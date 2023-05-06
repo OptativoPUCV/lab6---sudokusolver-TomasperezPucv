@@ -53,12 +53,16 @@ void print_node(Node* n){
 bool r_fila(Node *n, int fila){
   int arreglo[10]= {0};
   for(int i=0; i<9; i++){
-    arreglo[n->sudo[fila][i]]+=1;
+    
+    if(arreglo[n->sudo[fila][i]]==0){
+      arreglo[n->sudo[fila][i]] =1;
+    }
+    else return true
   }
   
-  for(int i=0; i<9; i++){
+  /*for(int i=0; i<9; i++){
     if(arreglo[i]>1) return true;
-  }
+  }*/
   return false;
 }
 bool r_colum(Node *n, int colum){
@@ -73,15 +77,10 @@ bool r_colum(Node *n, int colum){
   return false;
 }
 bool repite(Node *n, int num, int fila, int colum){
-  
-  
   //comprobacion por fila
   if(r_fila(n,fila)==true) return true;
-  if(r_colum(n,colum)==true) return true;
-  
-  
   //comprobacion por columna
-  
+  if(r_colum(n,colum)==true) return true;
   
   return false;
 }
