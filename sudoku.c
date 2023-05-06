@@ -57,7 +57,7 @@ bool repite(Node *n, int num, int fila, int colum){
       if(arreglo[num]>1) return true;
     }*/
     arreglo[n->sudo[fila][i]]+=1;
-    
+    if(arreglo[num]>1) return true;
   }
   //comprobacion por columna
   for(int i=0; i<9; i++){
