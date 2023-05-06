@@ -57,7 +57,7 @@ bool r_fila(Node *n, int fila){
     if(arreglo[n->sudo[fila][i]]==0){
       arreglo[n->sudo[fila][i]] =1;
     }
-    else return true
+    else return true;
   }
   
   /*for(int i=0; i<9; i++){

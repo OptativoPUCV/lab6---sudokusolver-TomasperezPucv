@@ -120,3 +120,9 @@ sudoku.c:61:3: error: expected ‘;’ before ‘}’ token
       |   ^
 Compilation failed
 4d4ac1c
+Sat 06 May 2023 07:29:51 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  3|3
+total_score: 25/70
+6d9c3f7
