@@ -43,27 +43,45 @@ void print_node(Node* n){
     }
     printf("\n");
 }
-
-
-
-bool repite(Node *n, int num, int fila, int colum){
-  int arreglo[10]= {0};
-  
-  //comprobacion por fila
-  for(int i=0; i<9; i++){
-    //if(n->sudo[fila][i]==num && i!=colum) return true;
+//if(n->sudo[fila][i]==num && i!=colum) return true;
     /*if(n->sudo[fila][i]==num){
       arreglo[num]+=1;
       if(arreglo[num]>1) return true;
     }*/
-    arreglo[n->sudo[fila][i]]+=1;
-    if(arreglo[num]>1) return true;
-  }
-  //comprobacion por columna
+
+//if(arreglo[num]>1) return true;
+bool r_fila(Node *n, int fila){
+  int arreglo[10]= {0};
   for(int i=0; i<9; i++){
-    if(n->sudo[i][colum]==num && i!=fila) return true;
-    
+    arreglo[n->sudo[fila][i]]+=1;
   }
+  
+  for(int i=0; i<9; i++){
+    if(arreglo[i]>1) return true;
+  }
+  return false;
+}
+bool r_colum(Node *n, int colum){
+  int arreglo[10]= {0};
+  for(int i=0; i<9; i++){
+    arreglo[n->sudo[i][colum]]+=1;
+  }
+  
+  for(int i=0; i<9; i++){
+    if(arreglo[i]>1) return true;
+  }
+  return false;
+}
+bool repite(Node *n, int num, int fila, int colum){
+  
+  
+  //comprobacion por fila
+  if(r_fila(n,fila)==true) return true;
+  if(r_colum(n,colum)==true) return true;
+  
+  
+  //comprobacion por columna
+  
   
   return false;
 }
